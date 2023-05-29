@@ -65,5 +65,6 @@ def create_parser():
                                      usage=usage())
     parser.add_argument("mode", help="init mode", choices=["earth", "lookup", "map", "maps"])
     parser.add_argument("-i", "--ip", help="an ip address or a file containing ip addresses")
+    parser.add_argument("-o", "--output", help="map output name", default="ipmap")
     parser.add_argument("-c", "--coordinates", help="space separated latitude and longitude", nargs=2)
     return parser
