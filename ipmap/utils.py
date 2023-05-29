@@ -1,8 +1,22 @@
 import os
 import argparse
 import subprocess
+from datetime import datetime
 
 
+def format_map_name():
+    """
+    Formats the output map name
+    """
+    dt_now = datetime.now()
+    if os.name == "nt":
+        map_name = dt_now.strftime("{}_%d-%m-%Y %I-%M-%S%p")
+    else:
+        map_name = dt_now.strftime("{}_%d-%m-%Y %I:%M:%S%p")
+        
+    return map_name
+
+        
 def path_finder(directories: list) -> None:
     """
     Checks if the specified directories exist.
