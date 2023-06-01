@@ -1,8 +1,8 @@
 import os
 import requests
 import webbrowser
-from rich import print
 from rich.tree import Tree
+from rich import print as xprint
 
 
 def get_ip_data(ip_address: str) -> list:
@@ -19,7 +19,7 @@ def get_ip_data(ip_address: str) -> list:
     list_of_coordinates = []
     # iterate over each IP and make a request to ip-api.com
     for idx, ip in enumerate(ips, start=1):
-        print(f"[[green]*[/]] Looking up IP {idx}: {ip}...")
+        xprint(f"[[green]*[/]] Looking up IP {idx}: {ip}...")
         response = requests.get(f"http://ip-api.com/json/{ip}").json()
         ip_data = [response['org'],
                    response['as'],
@@ -36,7 +36,7 @@ def get_ip_data(ip_address: str) -> list:
         for key, value in response.items():
             ip_data_tree.add(f"{key}: [green]{value}[/]")
 
-        print(ip_data_tree)
+        xprint(ip_data_tree)
         # extract the latitude, longitude and organization data from the response and append to the list_of_tuples
         list_of_coordinates.append(ip_data)
 
@@ -53,7 +53,7 @@ def process_user_input(user_input: str) -> list:
     if os.path.isfile(user_input):
         # if user_input is a file, read the contents of the file and return a list of IP addresses
         with open(user_input, 'r') as file:
-            print(f"[[green]+[/]]Loaded IP Addresses from file: {file.name}")
+            xprint(f"[[green]+[/]]Loaded IP Addresses from file: {file.name}")
             ips = file.readlines()
             ips = [ip.strip() for ip in ips]  # remove any whitespace characters from each IP address
             return ips
@@ -61,7 +61,7 @@ def process_user_input(user_input: str) -> list:
         return [user_input]
 
 
-def create_map(coordinates: list, output_file: str, template: str = "template/map.html") -> str:
+def create_map(coordinates: list, output_file: str, template: str = "ipmap/templates/map.html") -> str:
     """
     Uses the map template to create a new map with the geolocation data returned from the get_ip_data function
     :param coordinates: List of lists containing the geolocation data of each IP Address
@@ -105,5 +105,5 @@ def open_google_earth(coordinates: list) -> None:
                         f"89.06331136a,12094.0505788d,1y,1.97597436h,60t,-0r/data=KAI"
 
     # Open the URL in the default web browser
-    print(f"[[green]*[/]] Opening Google Earth on: {coordinates}...")
+    xprint(f"[[green]*[/]] Opening Google Earth on: {coordinates}...")
     webbrowser.open(google_earth_url)
