@@ -36,17 +36,18 @@
 
         function addMarkers() {{
             for (var i = 0; i < coordinates.length; i++) {{
-                var marker = new L.marker([coordinates[i][8], coordinates[i][9]])
-                .bindPopup('<b>Organization:</b> ' + coordinates[i][0] +
-                           '<br><b>AS:</b> ' + coordinates[i][1] +
-                           '<br><b>ISP:</b> ' + coordinates[i][2] +
-                           '<br><b>Country:</b> ' + coordinates[i][3] +
-                           '<br><b>City:</b> ' + coordinates[i][4] +
-                           '<br><b>ZIP Code:</b> ' + coordinates[i][5] +
-                           '<br><b>Region:</b> ' + coordinates[i][6] +
-                           '<br><b>Timezone:</b> ' + coordinates[i][7] +
+                var marker = new L.marker([coordinates[i][9], coordinates[i][10]])
+                .bindPopup('<b>IP:</b> ' + coordinates[i][0] +
+                           '<br><b>Organization:</b> ' + coordinates[i][1] +
+                           '<br><b>AS:</b> ' + coordinates[i][2] +
+                           '<br><b>ISP:</b> ' + coordinates[i][3] +
+                           '<br><b>Country:</b> ' + coordinates[i][4] +
+                           '<br><b>City:</b> ' + coordinates[i][5] +
+                           '<br><b>ZIP Code:</b> ' + coordinates[i][6] +
+                           '<br><b>Region:</b> ' + coordinates[i][7] +
+                           '<br><b>Timezone:</b> ' + coordinates[i][8] +
                            '<br><b>Latitude:</b> ' + coordinates[i][9] +
-                           '<br><b>Longitude:</b> ' + coordinates[i][8])
+                           '<br><b>Longitude:</b> ' + coordinates[i][10])
                 .addTo(map)
                 .openPopup();
             }}
