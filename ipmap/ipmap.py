@@ -1,46 +1,49 @@
 import os
 import requests
 import webbrowser
-from rich.tree import Tree
 from rich import print as xprint
+from ipmap.utils import create_ip_table
 
 
 def get_ip_data(ip_address: str) -> list:
     """
-    Gets the geolocation information of a given IP Address.
-    :param ip_address: IP Address to lookup
-    :return: A list of lists containing an IP Address's data.
-    The returned list is used in the leaflet map template to pin point the location(s)
-    of an IP by using the coordinates.
+    Gets the geolocation information of given IP Addresses.
+    :param ip_address: IP Addresses to lookup
+    :return: A list of lists containing IP Addresses' data.
+    The returned list is used in the leaflet map template to pinpoint the location(s)
+    of IPs by using the coordinates.
     """
     # process input to get list of IPs
     ips = process_user_input(user_input=ip_address)
     # create an empty list to store results
     list_of_coordinates = []
+
     # iterate over each IP and make a request to ip-api.com
     for idx, ip in enumerate(ips, start=1):
-        xprint(f"[[green]*[/]] Looking up IP {idx}: {ip}...")
+        xprint(f"[{idx}] Looking up: {ip}...")
         response = requests.get(f"http://ip-api.com/json/{ip}").json()
-        ip_data = [response['org'],
-                   response['as'],
-                   response['isp'],
-                   response['country'],
-                   response['city'],
-                   response['zip'],
-                   response['regionName'],
-                   response['timezone'],
-                   response['lat'],
-                   response['lon']]
+        ip_data = [
+            response['query'],
+            response['org'],
+            response['as'],
+            response['isp'],
+            response['country'],
+            response['city'],
+            response['zip'],
+            response['regionName'],
+            response['timezone'],
+            str(response['lat']),
+            str(response['lon'])
+        ]
 
-        ip_data_tree = Tree("\n" + response['org'])
-        for key, value in response.items():
-            ip_data_tree.add(f"{key}: [green]{value}[/]")
-
-        xprint(ip_data_tree)
-        # extract the latitude, longitude and organization data from the response and append to the list_of_tuples
+        # extract the latitude, longitude, and organization data from the response and append to the list_of_coordinates
         list_of_coordinates.append(ip_data)
 
-    # return the list_of_tuples
+    # create the IP geolocation data table
+    table = create_ip_table(title=f"IP Geolocation Data: {ip_address}", ip_data=list_of_coordinates)
+    xprint(table)
+
+    # return the list_of_coordinates
     return list_of_coordinates
 
 
@@ -53,7 +56,7 @@ def process_user_input(user_input: str) -> list:
     if os.path.isfile(user_input):
         # if user_input is a file, read the contents of the file and return a list of IP addresses
         with open(user_input, 'r') as file:
-            xprint(f"[[green]+[/]]Loaded IP Addresses from file: {file.name}")
+            xprint(f"[[green]+[/]] Loaded IP Addresses: {file.name}")
             ips = file.readlines()
             ips = [ip.strip() for ip in ips]  # remove any whitespace characters from each IP address
             return ips
