@@ -1,9 +1,37 @@
 import os
+import requests
 import subprocess
 from rich.table import Table
 from datetime import datetime
+from rich import print as xprint
+from rich.markdown import Markdown
+from ipmap.version import __version__
 
 
+
+def __send_request(endpoint) -> json:
+    """
+    Sends a GET request to the specified endpoint and returns JSON
+    :param endpoint: url endpoint to send request to
+    :return: JSON response
+    """"
+    with requests.get(endpoint) as response:
+        release_data = response.json()
+    return response
+
+
+# Check program updates
+def check_updates():
+    release_data = __send_request("https://api.github.com/repos/usermw/ree/releases/latest")
+    if release_data['tag_name'] != __version__:
+        raw_release_notes = release_data['body']
+        markdown_release_notes = Markdown(raw_release_notes)
+        xprint(f"{COLOURS['GREEN']}[UPDATE]{COLOURS['RESET']} A new release of ipmap is available ({release_data['tag_name']}).\n")
+        xprint(markdown_release_notes)
+    else:
+        pass
+
+        
 def create_ip_table(title: str, ip_data: list) -> Table:
     """
     Creates a table with the IP geolocation data.
