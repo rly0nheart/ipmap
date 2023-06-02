@@ -50,8 +50,10 @@ def run():
             webbrowser.open(generated_map)
     except KeyboardInterrupt:
         xprint("\n[[yellow]![/]] User interruption detected.")
-    #except Exception as err:
-        #xprint(f"[[red]X[/]] Error: [red]{err}[/]")
+    except FileNotFoundError as file_not_found_error:
+        xprint(f"[[yellow]![/]] File Not Found: [yellow]{file_not_found_error}[/]")
+    except Exception as error:
+        xprint(f"[[red]X[/]] Error: [red]{error}[/]")
 
 
 # Parse command line arguments
