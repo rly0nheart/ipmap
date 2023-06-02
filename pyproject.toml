@@ -1,0 +1,24 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+include = ["ipmap/templates/map.html"]
+name = "ipmap"
+version = "1.0.0"
+description = ""
+authors = ["Richard Mwewa <rly0nheart@duck.com>"]
+readme = "README.md"
+license = "BSD-3-Clause"
+homepage = "https://github.com/rly0nheart/ipmap"
+repository = "https://github.com/rly0nheart/ipmap"
+
+
+[tool.poetry.dependencies]
+rich = "*"
+python = "^3.9"
+requests = "*"
+
+
+[tool.poetry.scripts]
+ipmap = "ipmap.main:run"
