@@ -35,9 +35,11 @@ def create_ip_table(title: str, ip_data: list) -> Table:
     return table
 
 
-def format_map_name(defined_name):
+def format_map_name(defined_name) -> str:
     """
     Formats the output map name
+    :param defined_name: User-defined name for the map
+    :return: Formatted/Reconstructed name of the map
     """
     dt_now = datetime.now()
     if os.name == "nt":
