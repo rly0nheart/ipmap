@@ -21,7 +21,7 @@ def __send_request(endpoint) -> dict:
 
 # Check program updates
 def check_updates():
-    release_data = __send_request("https://api.github.com/repos/rly0nheart/octosuite/releases/latest")
+    release_data = __send_request("https://api.github.com/repos/rly0nheart/ipmap/releases/latest")
     if release_data['tag_name'] != __version__:
         raw_release_notes = release_data['body']
         markdown_release_notes = Markdown(raw_release_notes)
