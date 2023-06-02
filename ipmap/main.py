@@ -1,6 +1,6 @@
 import argparse
 from ipmap.ipmap import *
-from ipmap.utils import path_finder, clear_screen, format_map_name
+from ipmap.utils import path_finder, clear_screen, format_map_name, check_updates
 
 
 def usage():
@@ -38,6 +38,7 @@ def create_parser():
 def run():
     path_finder(["maps"])
     clear_screen()
+    check_updates()
     try:
         if args.mode == "earth":
             open_google_earth(args.coordinates)
@@ -49,8 +50,8 @@ def run():
             webbrowser.open(generated_map)
     except KeyboardInterrupt:
         xprint("\n[[yellow]![/]] User interruption detected.")
-    except Exception as err:
-        xprint(f"[[red]X[/]] Error: [red]{err}[/]")
+    #except Exception as err:
+        #xprint(f"[[red]X[/]] Error: [red]{err}[/]")
 
 
 # Parse command line arguments
