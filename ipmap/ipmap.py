@@ -35,14 +35,14 @@ def get_ip_data(ip_address: str) -> list:
             str(response['lon'])
         ]
 
-        # extract the latitude, longitude, and organization data from the response and append to the selected_ip_data
+        # get the selected ip data from the response and append it to the selected_ip_data list
         selected_ip_data.append(ip_data)
 
     # create the IP geolocation data table
     table = create_ip_table(title=f"IP Geolocation Data: {ip_address}", ip_data=selected_ip_data)
     xprint(table)
 
-    # return the list_of_coordinates
+    # return a list of lists containing selected information of each ip
     return selected_ip_data
 
 
