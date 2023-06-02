@@ -26,7 +26,7 @@ def check_updates():
     if release_data['tag_name'] != __version__:
         raw_release_notes = release_data['body']
         markdown_release_notes = Markdown(raw_release_notes)
-        xprint(f"{COLOURS['GREEN']}[UPDATE]{COLOURS['RESET']} A new release of ipmap is available ({release_data['tag_name']}).\n")
+        xprint(f"[UPDATE] A new release of ipmap is available ({release_data['tag_name']}).\n")
         xprint(markdown_release_notes)
     else:
         pass
