@@ -1,13 +1,43 @@
 import os
 import subprocess
+from rich.table import Table
 from datetime import datetime
 
 
-def format_map_name(defined_name) -> str:
+def create_ip_table(title: str, ip_data: list) -> Table:
+    """
+    Creates a table with the IP geolocation data.
+    :param title: Table title
+    :param ip_data: List of lists containing the geolocation data of IP Addresses
+    :return: Table object containing the IP geolocation data
+    """
+    column_headers = [
+        "IP",
+        "Organization",
+        "AS",
+        "ISP",
+        "Country",
+        "City",
+        "ZIP",
+        "Region",
+        "Timezone",
+        "Latitude",
+        "Longitude"
+    ]
+
+    table = Table(title=title, header_style="bold white")
+    for header in column_headers:
+        table.add_column(header)
+
+    for ip_info in ip_data:
+        table.add_row(*ip_info)
+
+    return table
+
+
+def format_map_name(defined_name):
     """
     Formats the output map name
-    :param defined_name: user-defined map name
-    :return: formatted map name
     """
     dt_now = datetime.now()
     if os.name == "nt":
