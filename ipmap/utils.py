@@ -8,13 +8,12 @@ from rich.markdown import Markdown
 from ipmap.version import __version__
 
 
-
-def __send_request(endpoint) -> json:
+def __send_request(endpoint) -> dict:
     """
     Sends a GET request to the specified endpoint and returns JSON
     :param endpoint: url endpoint to send request to
-    :return: JSON response
-    """"
+    :return: Dictionary response (JSON)
+    """
     with requests.get(endpoint) as response:
         response_data = response.json()
     return response_data
