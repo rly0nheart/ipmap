@@ -2,7 +2,7 @@ import os
 import requests
 import webbrowser
 from rich import print as xprint
-from ipmap.utils import create_ip_table
+from ipmap.utils import __send_get_request, create_ip_table
 
 
 def get_ip_data(ip_address: str) -> list:
@@ -21,7 +21,7 @@ def get_ip_data(ip_address: str) -> list:
     # iterate over each IP and make a request to ip-api.com
     for idx, ip in enumerate(ips, start=1):
         xprint(f"[{idx}] Looking up: {ip}...")
-        response = requests.get(f"http://ip-api.com/json/{ip}").json()
+        response = __send_get_request(f"http://ip-api.com/json/{ip}")
         ip_data = [
             response['query'],
             response['org'],
