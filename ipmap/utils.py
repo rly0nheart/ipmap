@@ -16,8 +16,8 @@ def __send_request(endpoint) -> json:
     :return: JSON response
     """"
     with requests.get(endpoint) as response:
-        release_data = response.json()
-    return response
+        response_data = response.json()
+    return response_data
 
 
 # Check program updates
