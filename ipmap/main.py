@@ -26,13 +26,13 @@ modes:
 
 
 def create_parser():
-    _parser = argparse.ArgumentParser(description="IP.MAPPER — by Richard Mwewa (https://about.me/rly0nheart)",
+    parser = argparse.ArgumentParser(description="IP.MAPPER — by Richard Mwewa (https://about.me/rly0nheart)",
                                       usage=usage())
     parser.add_argument("mode", help="init mode", choices=["earth", "lookup", "map", "maps"])
     parser.add_argument("-i", "--ip", help="an ip address or a file containing ip addresses")
     parser.add_argument("-o", "--output", help="map output name", default="ipmap")
     parser.add_argument("-c", "--coordinates", help="space separated latitude and longitude", nargs=2)
-    return _parser
+    return parser
 
 
 def run():
@@ -44,14 +44,15 @@ def run():
         elif args.mode == "lookup":
             get_ip_data(args.ip)
         elif args.mode == "map":
-            generated_map = create_map(get_ip_data(args.ip), os.path.join("maps", format_map_name(args.output)))
+            ip_coordinates = get_ip_data(args.ip)
+            generated_map = create_map(ip_coordinates, os.path.join("maps", format_map_name(args.output)))
             webbrowser.open(generated_map)
     except KeyboardInterrupt:
         xprint("\n[[yellow]![/]] User interruption detected.")
     except Exception as err:
         xprint(f"[[red]X[/]] Error: [red]{err}[/]")
-        
-        
+
+
 # Parse command line arguments
 parser = create_parser()
 args = parser.parse_args()
