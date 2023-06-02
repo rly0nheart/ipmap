@@ -16,7 +16,7 @@ def get_ip_data(ip_address: str) -> list:
     # process input to get list of IPs
     ips = process_user_input(user_input=ip_address)
     # create an empty list to store results
-    list_of_coordinates = []
+    selected_ip_data = []
 
     # iterate over each IP and make a request to ip-api.com
     for idx, ip in enumerate(ips, start=1):
@@ -36,15 +36,15 @@ def get_ip_data(ip_address: str) -> list:
             str(response['lon'])
         ]
 
-        # extract the latitude, longitude, and organization data from the response and append to the list_of_coordinates
-        list_of_coordinates.append(ip_data)
+        # extract the latitude, longitude, and organization data from the response and append to the selected_ip_data
+        selected_ip_data.append(ip_data)
 
     # create the IP geolocation data table
-    table = create_ip_table(title=f"IP Geolocation Data: {ip_address}", ip_data=list_of_coordinates)
+    table = create_ip_table(title=f"IP Geolocation Data: {ip_address}", ip_data=selected_ip_data)
     xprint(table)
 
     # return the list_of_coordinates
-    return list_of_coordinates
+    return selected_ip_data
 
 
 def process_user_input(user_input: str) -> list:
