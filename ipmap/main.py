@@ -1,38 +1,11 @@
-import argparse
 from ipmap.ipmap import *
-from ipmap.utils import path_finder, clear_screen, format_map_name, check_updates
+from ipmap.config import format_map_name, create_parser
+from ipmap.utils import path_finder, clear_screen, check_updates
 
 
-def usage():
-    return """
-    Geolocate IP Address(es) (with an interactive map)
-    --------------------------------------------------
-    ipmap map --ip <ip/file_containing_ip_addresses>
-
-    Open Google Earth with the given coordinates
-    --------------------------------------------
-    ipmap earth --coordinates <latitude> <longitude>
-
-    Lookup IP Address(es) (same as map but without an interactive map)
-    ------------------------------------------------------------------
-    ipmap lookup --ip <ip/file_containing_ip_addresses>
-
-
-modes:
-    map - creates an interactive map and pin points the locations of the specified ip address(es) on it.
-    earth - opens google earth with the specified coordinates.
-    lookup - looks up the specified ip address(es)' information.
-    """
-
-
-def create_parser():
-    parser = argparse.ArgumentParser(description="IP.MAPPER — by Richard Mwewa (https://about.me/rly0nheart)",
-                                      usage=usage())
-    parser.add_argument("mode", help="init mode", choices=["earth", "lookup", "map", "maps"])
-    parser.add_argument("-i", "--ip", help="an ip address or a file containing ip addresses")
-    parser.add_argument("-o", "--output", help="map output name", default="ipmap")
-    parser.add_argument("-c", "--coordinates", help="space separated latitude and longitude", nargs=2)
-    return parser
+# Parse command line arguments
+parser = create_parser()
+args = parser.parse_args()
 
 
 def run():
@@ -49,13 +22,9 @@ def run():
             generated_map = create_map(ip_coordinates, os.path.join("maps", format_map_name(args.output)))
             webbrowser.open(generated_map)
     except KeyboardInterrupt:
-        xprint("\n[[yellow]![/]] User interruption detected.")
+        xprint(f"\n[{colour.YELLOW}!{colour.RESET}] User interruption detected.")
     except FileNotFoundError as file_not_found_error:
-        xprint(f"[[yellow]![/]] File Not Found: [yellow]{file_not_found_error}[/]")
+        xprint(f"[{colour.YELLOW}!{colour.RESET}] File Not Found: {colour.YELLOW}{file_not_found_error}{colour.RESET}")
     except Exception as error:
-        xprint(f"[[red]X[/]] Error: [red]{error}[/]")
+        xprint(f"[{colour.RESET}X{colour.RESET}] Error: {colour.RESET}{error}{colour.RESET}")
 
-
-# Parse command line arguments
-parser = create_parser()
-args = parser.parse_args()

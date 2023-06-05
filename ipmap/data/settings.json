@@ -1,0 +1,26 @@
+{
+  "program":
+  {
+    "name": "IPMap (IP Mapper)",
+    "version":
+    {
+      "major": "1",
+      "minor": "0",
+      "patch": "0",
+      "suffix": ""
+    },
+    "license": "BDS-3 Clause"
+  },
+  "colours":
+  {
+    "BLACK": "[white]",
+    "CYAN": "[cyan]",
+    "BLUE": "[blue]",
+    "GREEN": "[green]",
+    "RED": "[red]",
+    "RESET": "[/]",
+    "WHITE": "[white]",
+    "YELLOW": "[yellow]",
+    "PURPLE": "[purple]"
+  }
+}

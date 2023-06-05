@@ -3,7 +3,10 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-include = ["ipmap/templates/map.html"]
+include = [
+    {path = "ipmap/data/templates/map.html"},
+    {path = "ipmap/data/settings.json"}
+]
 name = "ipmap"
 version = "1.0.0"
 description = ""
