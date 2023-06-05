@@ -23,7 +23,7 @@ def get_ip_data(ip_address: str) -> list:
 
     # iterate over each IP and make a request to ip-api.com
     for idx, ip in enumerate(ips, start=1):
-        xprint(f"[{idx}] Looking up: {ip}...")
+        xprint(f"{idx} Looking up: {ip}...", end="\r")
         response = send_request(f"http://ip-api.com/json/{ip}")
         ip_data = [
             response['query'],
@@ -61,7 +61,7 @@ def process_user_input(user_input: str) -> list:
     if os.path.isfile(user_input):
         # if user_input is a file, read the contents of the file and return a list of IP addresses
         with open(user_input, 'r') as file:
-            xprint(f"[{colour.GREEN}+{colour.RESET}] Loaded IP Addresses: {file.name}")
+            xprint(f"Loaded IP Addresses: '{file.name}'")
             ips = file.readlines()
             ips = [ip.strip() for ip in ips]  # remove any whitespace characters from each IP address
             return ips
@@ -116,5 +116,5 @@ def open_google_earth(coordinates: list) -> None:
                         f"89.06331136a,12094.0505788d,1y,1.97597436h,60t,-0r/data=KAI"
 
     # Open the URL in the default web browser
-    xprint(f"[{colour.GREEN}*{colour.RESET}] Opening Google Earth on: {coordinates}...")
+    xprint(f"{coordinates} Opening Google Earth...")
     webbrowser.open(google_earth_url)
