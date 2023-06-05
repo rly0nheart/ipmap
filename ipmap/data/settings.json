@@ -2,6 +2,7 @@
   "program":
   {
     "name": "IPMap (IP Mapper)",
+    "about": "IP geolocation & mapping tool.",
     "version":
     {
       "major": "1",
@@ -9,7 +10,15 @@
       "patch": "0",
       "suffix": ""
     },
-    "license": "BDS-3 Clause"
+    "license": "BDS-3 Clause",
+    "developer":
+    {
+      "name": "Richard Mwewa",
+      "alias": "rly0nheart",
+      "about": "https://about.me/rly0nheart",
+      "twitter": "https://twitter.com/rly0nheart",
+      "github": "https://github.com/rly0nheart"
+    }
   },
   "colours":
   {
