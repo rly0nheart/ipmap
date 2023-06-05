@@ -7,10 +7,10 @@ from datetime import datetime
 
 class Version:
     def __init__(self):
-        self.major = settings["program"]["version"]["major"]
-        self.minor = settings["program"]["version"]["minor"]
-        self.patch = settings["program"]["version"]["patch"]
-        self.suffix = settings["program"]["version"]["suffix"]
+        self.major = settings()["program"]["version"]["major"]
+        self.minor = settings()["program"]["version"]["minor"]
+        self.patch = settings()["program"]["version"]["patch"]
+        self.suffix = settings()["program"]["version"]["suffix"]
 
     def full_version(self) -> str:
         """
@@ -19,7 +19,7 @@ class Version:
         Returns:
             str: The complete version string in the format "major.minor.patch.suffix".
         """
-        return f"{self.major}.{self.minor}.{self.patch}.{self.suffix}"
+        return f"{self.major}.{self.minor}.{self.patch}{self.suffix}"
 
 
 class Colours:
@@ -39,7 +39,25 @@ class Colours:
 
         :return: The value of the specified colour.
         """
-        return settings["colours"][colour_name]
+        return settings()["colours"][colour_name]
+
+
+def settings() -> dict:
+    """
+    Loads the program's settings from /data/settings.json
+    :return: Dictionary (JSON) containing program settings
+    """
+    # Get the absolute path of the current file
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # Construct the path to the settings.json file
+    settings_path = os.path.join(current_dir, "data", "settings.json")
+
+    # Load the settings from the file
+    with open(settings_path) as file:
+        data = json.load(file)
+
+    return data
 
 
 def format_map_name(defined_name) -> str:
@@ -105,26 +123,19 @@ def usage():
 
 modes:
     map - creates an interactive map and pin points the locations of the specified ip address(es) on it.
-    earth - opens google earth with the specified coordinates.
+    earth - opens google earth on the specified coordinates
     lookup - looks up the specified ip address(es)' information.
     """
 
 
 def create_parser():
-    parser = argparse.ArgumentParser(description="IP.MAPPER — by Richard Mwewa (https://about.me/rly0nheart)",
-                                     usage=usage())
-    parser.add_argument("mode", help="init mode", choices=["earth", "lookup", "map", "maps"])
+    parser = argparse.ArgumentParser(description=f"{settings()['program']['name']}" 
+                                                 f" — by {settings()['program']['developer']['name']}" 
+                                                 f" ({settings()['program']['developer']['about']})",
+                                     epilog=settings()['program']['about'], usage=usage())
+    parser.add_argument("mode", help="init mode", choices=["earth", "lookup", "map"])
     parser.add_argument("-i", "--ip", help="an ip address or a file containing ip addresses")
     parser.add_argument("-o", "--output", help="map output name", default="ipmap")
     parser.add_argument("-c", "--coordinates", help="space separated latitude and longitude", nargs=2)
     parser.add_argument("-v", "--version", action="version", version=Version().full_version())
     return parser
-
-
-# Get the absolute path of the current file
-current_dir = os.path.dirname(os.path.abspath(__file__))
-# Construct the path to the settings.json file
-settings_path = os.path.join(current_dir, "data", "settings.json")
-# Load the settings from the file
-with open(settings_path) as f:
-    settings = json.load(f)
