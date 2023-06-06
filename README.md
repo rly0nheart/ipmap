@@ -20,6 +20,27 @@ Or if you prefer to install it from source, you can run the following command
 ```
 pip install git+https://github.com/rly0nheart/ipmap.git
 ```
+## Build from source
+```Python
+# install poetry
+pip install poetry
+
+# clone the project
+git clone https://github.com/rly0nheart/ipmap
+
+# move to the ipmap directory
+cd ipmap
+
+# build the wheel file
+poetry build
+
+# install the built wheel (Linux)
+pip install dist/*.whl
+
+# install built wheel (Windows)
+pip install .\dist\generated-wheel-file-name.whl
+```
+
 # Usage
 To see the usage, you can simply run
 ```
