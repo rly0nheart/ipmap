@@ -2,7 +2,7 @@
   "program":
   {
     "name": "IPMap (IP Mapper)",
-    "about": "IP geolocation & mapping tool.",
+    "about": "A cross-platform easy-to-use ip geolocation & mapping tool.",
     "version":
     {
       "major": "1",
