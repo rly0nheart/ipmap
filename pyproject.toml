@@ -8,7 +8,7 @@ include = [
     {path = "ipmap/data/settings.json"}
 ]
 name = "ipmap"
-version = "1.0.0"
+version = "1.0.1"
 description = "A cross-platform easy-to-use ip geolocation & mapping tool."
 authors = ["Richard Mwewa <rly0nheart@duck.com>"]
 readme = "README.md"
