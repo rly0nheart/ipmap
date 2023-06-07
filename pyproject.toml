@@ -9,7 +9,7 @@ include = [
 ]
 name = "ipmap"
 version = "1.0.0"
-description = ""
+description = "A cross-platform easy-to-use ip geolocation & mapping tool."
 authors = ["Richard Mwewa <rly0nheart@duck.com>"]
 readme = "README.md"
 license = "BSD-3-Clause"
