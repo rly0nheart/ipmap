@@ -6,7 +6,6 @@
 
 ![English readme](README.md) • ![简体中文 readme](README_zh-CH.md) • ![正體中文 readme](README_zh-TW) • ![Lengua española readme](README_es.md) • ![Deutsche readme](README_de,md) • ![Svenska readme](README_sv.md) • ![한국어 readme](README_kr.md) • [Français readme](README_fr.md) • ![हिन्दी readme](README_hi.md) • ![Português readme](README_pt.md) • ![Italian readme](README_it.md)
  • ![Русский readme](README_ru.md) • [Indonesian readme](README_id.md) • ![فارسی readme](README_fa.md) • ![Türkçe readme](README_tr.md) • ![Polskie readme](README_pl.md)
- 
 
 IPMap 从文件中定位给定的 ip 地址/地址，然后生成一个 [leaflet](https://github.com/leaflet/leaflet) 地图，精确定位每个 ip 地址的位置（使用正确的参数）。
 
