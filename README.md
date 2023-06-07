@@ -4,7 +4,7 @@
 ![PyPI](https://img.shields.io/pypi/v/ipmap?label=Latest%20Release&logo=pypi)
 ![PyPI - Status](https://img.shields.io/pypi/status/ipmap?label=Status&logo=pypi)
 
-![English readme](README.md) • ![简体中文 readme](README_zh-CH.md) • ![正體中文 readme](README_zh-TW.md) • ![Lengua española readme](README_es.md) • ![Deutsche readme](README_de,md) • ![Svenska readme](README_sv.md) • ![한국어 readme](README_kr.md) • [Français readme](README_fr.md) • ![हिन्दी readme](README_hi.md) • ![Português readme](README_pt.md) • ![Italian readme](README_it.md)
+![English readme](README.md) • ![简体中文 readme](README_zh-CN.md) • ![正體中文 readme](README_zh-TW.md) • ![Lengua española readme](README_es.md) • ![Deutsche readme](README_de,md) • ![Svenska readme](README_sv.md) • ![한국어 readme](README_kr.md) • [Français readme](README_fr.md) • ![हिन्दी readme](README_hi.md) • ![Português readme](README_pt.md) • ![Italian readme](README_it.md)
  • ![Русский readme](README_ru.md) • [Indonesian readme](README_id.md) • ![فارسی readme](README_fa.md) • ![Türkçe readme](README_tr.md) • ![Polskie readme](README_pl.md)
  
 IPMap geolocates a given ip address/addresses from a file, then generates a [leaflet](https://github.com/leaflet/leaflet) map pin-pointing the location of each ip address on it (with the right argument).
