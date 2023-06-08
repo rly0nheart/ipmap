@@ -4,23 +4,24 @@
 ![PyPI](https://img.shields.io/pypi/v/ipmap?label=Latest%20Release&logo=pypi)
 ![PyPI - Status](https://img.shields.io/pypi/status/ipmap?label=Status&logo=pypi)
 
-[English readme](https://github.com/rly0nheart/ipmap/blob/master/README.md) • 
-[简体中文 readme](https://github.com/rly0nheart/ipmap/blob/master/README_zh-CN.md) • 
-[正體中文 readme](https://github.com/rly0nheart/ipmap/blob/master/README_zh-TW.md) • 
-[Lengua española readme](https://github.com/rly0nheart/ipmap/blob/master/README_es.md) • 
-[Deutsche readme](https://github.com/rly0nheart/ipmap/blob/master/README_de.md) • 
-[Svenska readme](https://github.com/rly0nheart/ipmap/blob/master/README_sv.md) • 
-[한국어 readme](https://github.com/rly0nheart/ipmap/blob/master/README_kr.md) • 
-[Français readme](https://github.com/rly0nheart/ipmap/blob/master/README_fr.md) • 
-[हिन्दी readme](https://github.com/rly0nheart/ipmap/blob/master/README_hi.md) • 
-[Português readme](https://github.com/rly0nheart/ipmap/blob/master/README_pt.md) • 
-[Italian readme](https://github.com/rly0nheart/ipmap/blob/master/README_it.md) • 
-[Русский readme](https://github.com/rly0nheart/ipmap/blob/master/README_ru.md) • 
-[Indonesian readme](https://github.com/rly0nheart/ipmap/blob/master/README_id.md) • 
-[فارسی readme](https://github.com/rly0nheart/ipmap/blob/master/README_fa.md) • 
-[Türkçe readme](https://github.com/rly0nheart/ipmap/blob/master/README_tr.md) • 
+[English readme](https://github.com/rly0nheart/ipmap/blob/master/README.md) •
+[简体中文 readme](https://github.com/rly0nheart/ipmap/blob/master/README_zh-CN.md) •
+[正體中文 readme](https://github.com/rly0nheart/ipmap/blob/master/README_zh-TW.md) •
+[Lengua española readme](https://github.com/rly0nheart/ipmap/blob/master/README_es.md) •
+[Deutsche readme](https://github.com/rly0nheart/ipmap/blob/master/README_de.md) •
+[Svenska readme](https://github.com/rly0nheart/ipmap/blob/master/README_sv.md) •
+[한국어 readme](https://github.com/rly0nheart/ipmap/blob/master/README_kr.md) •
+[Français readme](https://github.com/rly0nheart/ipmap/blob/master/README_fr.md) •
+[हिन्दी readme](https://github.com/rly0nheart/ipmap/blob/master/README_hi.md) •
+[Português readme](https://github.com/rly0nheart/ipmap/blob/master/README_pt.md) •
+[Italian readme](https://github.com/rly0nheart/ipmap/blob/master/README_it.md) •
+[Русский readme](https://github.com/rly0nheart/ipmap/blob/master/README_ru.md) •
+[Indonesian readme](https://github.com/rly0nheart/ipmap/blob/master/README_id.md) •
+[فارسی readme](https://github.com/rly0nheart/ipmap/blob/master/README_fa.md) •
+[عربي readme](https://github.com/rly0nheart/ipmap/blob/master/README_ar.md) •
+[Türkçe readme](https://github.com/rly0nheart/ipmap/blob/master/README_tr.md) •
 [Polskie readme](https://github.com/rly0nheart/ipmap/blob/master/README_pl.md)
- 
+
 IPMap geolocates a given ip address/addresses from a file, then generates a [leaflet](https://github.com/leaflet/leaflet) map pin-pointing the location of each ip address on it (with the right argument).
 
 # Features
@@ -32,7 +33,7 @@ IPMap geolocates a given ip address/addresses from a file, then generates a [lea
 
 # Installation
 ## PyPI
-IPMap can be installed from PyPI by running the folloing command in terminal/command prompt
+IPMap can be installed from PyPI by running the following command in terminal/command prompt
 ```
 pip install ipmap
 ```
@@ -69,7 +70,7 @@ ipmap --help
 ```
 The output should look like the following
 ```
-usage: 
+usage:
     Geolocate IP Address(es) (with an interactive map)
     --------------------------------------------------
     ipmap map --ip <ip>
@@ -86,7 +87,7 @@ modes:
     map - creates an interactive map and pin points the locations of the specified ip address(es) on it.
     earth - opens google earth on the location of the given ip address.
     lookup - looks up the specified ip address(es)' information.
-    
+
 
 IPMap (IP Mapper) — by Richard Mwewa (https://about.me/rly0nheart)
 
