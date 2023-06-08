@@ -21,14 +21,14 @@
 [Türkçe readme](https://github.com/rly0nheart/ipmap/blob/master/README_tr.md) • 
 [Polskie readme](https://github.com/rly0nheart/ipmap/blob/master/README_pl.md)
 
-IPMap lokalisiert eine oder mehrere bestimmte IP-Adressen aus einer Datei und generiert dann eine [Leaflet](https://github.com/leaflet/leaflet)-Karte, die den Standort jeder darauf befindlichen IP-Adresse genau angibt (mit dem richtigen Argument).
+IPMap lokalisiert eine oder mehrere bestimmte IP-Adressen aus einer Datei und generiert dann eine [Leaflet Karte](https://github.com/leaflet/leaflet). Die den Standort jeder darauf befindlichen IP-Adresse genau angibt (mit dem richtigen Argument).
 
 # Merkmale
-- [x] Sucht nach IP-Adresse(n) und gibt die zugehörigen Informationen zurück.
-- [x] Sucht nach einer oder mehreren IP-Adressen und gibt die zugehörigen Informationen zurück. Anschließend wird der Standort der IP-Adresse(n) auf einer generierten Prospektkarte lokalisiert.
-- [x] Öffnet Google Earth an den angegebenen Koordinaten (Format: Breitengrad und Längengrad).
-- [x] Generierte Karten werden im Verzeichnis „maps“ gespeichert, das zur Laufzeit erstellt wird, falls es nicht existiert.
-- [x] Verwendet keine externen Abhängigkeiten für die Karte, sondern verwendet stattdessen eine bereits geschriebene HTML-Datei ![Kartenvorlage](ipmap/data/templates/map.html).
+* Sucht nach IP-Adresse(n) und gibt die zugehörigen Informationen zurück.
+* Sucht nach einer oder mehreren IP-Adressen und gibt die zugehörigen Informationen zurück. Anschließend wird der Standort der IP-Adresse(n) auf einer generierten Prospektkarte lokalisiert.
+* Öffnet Google Earth am Standort der angegebenen IP-Adresse(n).
+* Generierte Karten werden im Verzeichnis „maps“ im Home-Verzeichnis des Benutzers gespeichert, das zur Laufzeit erstellt wird, falls es nicht existiert.
+* Verwendet keine externen Abhängigkeiten für die Karte, sondern verwendet stattdessen eine bereits geschriebene HTML [Kartenvorlage](ipmap/data/templates/map.html).
 
 # Installation
 ## PyPI
@@ -72,19 +72,19 @@ Die Ausgabe sollte wie folgt aussehen
 Verwendung:
      IP-Adresse(n) geolokalisieren (mit einer interaktiven Karte)
      --------------------------------------------------
-     ipmap map --ip <ip/file_tained_ip_addresses>
+     ipmap map --ip <ip>
 
      Öffnen Sie Google Earth an den angegebenen Koordinaten
      ---------------------------------------------
-     ipmap earth --coordinates <Breitengrad> <Längengrad>
+     ipmap earth --ip <ip>
 
      IP-Adresse(n) suchen (wie Karte, aber ohne interaktive Karte)
      -------------------------------------------------- ----------------
-     ipmap lookup --ip <IP/Datei_mit_IP-Adressen>
+     ipmap lookup --ip <ip>
 
 Modi:
      map – erstellt eine interaktive Karte und zeigt die Standorte der angegebenen IP-Adresse(n) darauf an.
-     earth – öffnet Google Earth an den angegebenen Koordinaten
+     earth – öffnet Google Earth am Standort der angegebenen IP-Adresse.
      lookup – sucht nach Informationen zu den angegebenen IP-Adressen.
     
 
@@ -95,12 +95,14 @@ Positionsargumente:
 
 Optionen:
    -h, --help zeigt diese Hilfemeldung an und beendet den Vorgang
-   -i IP, --ip IP eine IP-Adresse oder eine Datei mit IP-Adressen
+   -i IP, --ip IP IP
    -o AUSGABE, --output AUSGABE
-                         Name der Kartenausgabe
-   -c KOORDINATEN KOORDINATEN, --coordinates KOORDINATEN KOORDINATEN
-                         durch Leerzeichen getrennter Breiten- und Längengrad
+                         Kartenausgabename (Standard-IPmap)
    -v, --version zeigt die Versionsnummer des Programms an und beendet das Programm
 
 Ein plattformübergreifendes, benutzerfreundliches IP-Geolocation- und Mapping-Tool.
 ```
+> Sie können auch eine Datei mit IP-Adressen an „--ip“ übergeben. IPMap verarbeitet die Datei entsprechend und liest jede IP Zeile für Zeile.
+# Übersetzungen
+* [Justin Clark](https://github.com/jclark1913) – [README_ar.md](https://github.com/rly0nheart/ipmap/blob/master/README_ar.md) für die arabische Übersetzung hinzugefügt
+> Wenn Sie die README-Datei des Projekts in eine beliebige Sprache übersetzen möchten oder die (von Google übersetzten) Übersetzungen der bereits vorhandenen README-Dateien verbessern können, können Sie gerne eine Pull-Anfrage mit Ihren Übersetzungen öffnen. Ich würde sie gerne in das Projekt einbeziehen :).
