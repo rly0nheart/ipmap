@@ -21,14 +21,14 @@
 [Türkçe readme](https://github.com/rly0nheart/ipmap/blob/master/README_tr.md) • 
 [Polskie readme](https://github.com/rly0nheart/ipmap/blob/master/README_pl.md)
 
-IPMap geolokaliserar en given ip-adress/adresser från en fil, och genererar sedan en [broschyr](https://github.com/leaflet/leaflet) karta som visar platsen för varje ip-adress på den (med rätt argument).
+IPMap geolokaliserar en given ip-adress/adresser från en fil, och genererar sedan en [broschyr karta](https://github.com/leaflet/leaflet) som visar platsen för varje ip-adress på den (med rätt argument).
 
 # Funktioner
-- [x] Slår upp ip-adresser och returnerar tillhörande information.
-- [x] Slår upp en ip-adress och returnerar den associerade informationen och pekar sedan på platsen för ip-adresserna på en genererad broschyrkarta.
-- [x] Öppnar Google Earth på de angivna koordinaterna (format: latitud longitud).
-- [x] Genererade kartor sparas i `kartor`-katalogen som skapas under körning om den inte finns.
-- [x] Använder inte externa beroenden för kartan, använder istället en redan skriven html ![kartmall](ipmap/data/templates/map.html).
+* Slår upp ip-adresser och returnerar tillhörande information.
+* Slår upp en ip-adress och returnerar den associerade informationen och pekar sedan på platsen för ip-adresserna på en genererad broschyrkarta.
+* Öppnar Google Earth på platsen för de angivna IP-adresserna.
+* Genererade kartor sparas i "kartor"-katalogen i användarens hemkatalog som skapas under körning om den inte finns.
+* Använder inte externa beroenden för kartan, använder istället en redan skriven html [kartmall](ipmap/data/templates/map.html).
 
 # Installation
 ## PyPI
@@ -47,7 +47,7 @@ pip install git+https://github.com/rly0nheart/ipmap.git
 pip install poetry
 
 # klona projektet
-git clone https://github.com/rly0nheart/ipmap
+git-klon https://github.com/rly0nheart/ipmap
 
 # flytta till ipmap-katalogen
 cd ipmap
@@ -56,7 +56,7 @@ cd ipmap
 poetry build
 
 # installera det inbyggda hjulet (Linux)
-pip installera dist/*.whl
+pip install dist/*.whl
 
 # installera inbyggt hjul (Windows)
 pip install .\dist\generated-wheel-file-name.whl
@@ -72,19 +72,19 @@ Utgången ska se ut som följande
 användande:
      Geolokalisera IP-adresser (med en interaktiv karta)
      --------------------------------------------------
-     ipmap map --ip <ip/file_innehållande_ip_adresser>
+     ipmap map --ip <ip>
 
      Öppna Google Earth på de angivna koordinaterna
      --------------------------------------------
-     ipmap earth --koordinater <latitud> <longitud>
+     ipmap earht --ip <ip>
 
      Slå upp IP-adresser (samma som kartan men utan en interaktiv karta)
      -------------------------------------------------- ----------------
-     ipmap lookup --ip <ip/file_innehållande_ip_adresser>
+     ipmap lookup --ip <ip>
 
 lägen:
      map - skapar en interaktiv karta och stift pekar på platserna för de angivna IP-adresserna på den.
-     earth - öppnar google earth på de angivna koordinaterna
+     earth - öppnar google earth på platsen för den angivna ip-adressen.
      lookup - slår upp informationen om den/de angivna ip-adresserna.
     
 
@@ -95,12 +95,14 @@ positionsargument:
 
 alternativ:
    -h, --help visa detta hjälpmeddelande och avsluta
-   -i IP, --ip IP en ip-adress eller en fil som innehåller ip-adresser
+   -i IP, --ip IP ip
    -o OUTPUT, --output OUTPUT
-                         namn på kartutdata
-   -c COORDINATES COORDINATES, --coordinates COORDINATES COORDINATES
-                         rymdseparerade latitud och longitud
+                         map output namn (standard ipmap)
    -v, --version visar programmets versionsnummer och avsluta
 
 Ett plattformsoberoende lättanvänt verktyg för geolokalisering och kartläggning av IP.
 ```
+> Du kan också skicka en fil som innehåller ip-adresser till `--ip`, IPMap kommer att bearbeta filen därefter och läsa varje ip rad för rad.
+# Översättningar
+* [Justin Clark](https://github.com/jclark1913) - Lade till [README_ar.md](https://github.com/rly0nheart/ipmap/blob/master/README_ar,md) för arabisk översättning
+> Om du vill översätta projektets README till något språk, eller om du kan förbättra (Google-översatta) översättningarna av de redan befintliga README:erna, öppna gärna en pull-förfrågan med dina översättningar. Jag tar mer än gärna med dem i projektet :).
