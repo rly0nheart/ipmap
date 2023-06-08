@@ -10,8 +10,10 @@ colour = Colours()
 def get_ip_data(ip_address: str) -> list:
     """
     Gets the geolocation information of given IP Addresses.
+
     :param ip_address: IP Addresses to look up
     :return: A list of lists containing IP Addresses' data.
+
     The returned list is used in the leaflet map template to pinpoint the location(s)
     of IPs by using the coordinates.
     """
@@ -44,7 +46,7 @@ def get_ip_data(ip_address: str) -> list:
 
     # create the IP geolocation data table
     # the table gets displayed on the terminal
-    table = create_ip_table(title=f"IP Geolocation Data: {ip_address}", ip_data=ip_data_for_map)
+    table = create_ip_table(title=f"\nIP Geolocation Data: {ip_address}", ip_data=ip_data_for_map)
     xprint(table)
 
     # return a list of lists containing ip data
@@ -55,6 +57,7 @@ def get_ip_data(ip_address: str) -> list:
 def process_user_input(user_input: str) -> list:
     """
     Processes input from user to determine the type, and how to return the results
+
     :param user_input: IP; could be a single IP or a text file containing IP Addresses
     :return: A list of IP Addresses
     """
@@ -72,29 +75,38 @@ def process_user_input(user_input: str) -> list:
 def create_map(coordinates: list, output_file: str) -> str:
     """
     Uses the map template to create a new map with the geolocation data returned from the get_ip_data function
+
     :param coordinates: List of lists containing the geolocation data of each IP Address
     :param output_file: Output filename of the generated map
     :return: An interactive map in default browser (with pins pointing on the areas that correspond the IPs coordinates)
     """
+    # Construct path to the user's home directory
+    home_directory = os.path.expanduser("~")
+
     # Get the absolute path of the current file
-    current_dir = os.path.dirname(os.path.abspath(__file__))
+    current_directory = os.path.dirname(os.path.abspath(__file__))
+
+    # Construct the path to the maps directory
+    maps_directory = os.path.join(home_directory, "maps")
+
     # Construct the path to the map template
-    html_path = os.path.join(current_dir, "data", "templates", "map.html")
+    html_path = os.path.join(current_directory, "data", "templates", "map.html")
     with open(html_path, "r") as html_file:
         html_content = html_file.read()
 
     updated_html_content = html_content.format(output_file, coordinates)
 
-    with open(f"{output_file}.html", "w") as created_map:
+    with open(os.path.join(maps_directory, f"{output_file}.html"), "w") as created_map:
         created_map.write(updated_html_content)
 
     return created_map.name
 
 
-def open_google_earth(coordinates: list) -> None:
+def open_google_earth(ip_data: list) -> None:
     """
     Opens Google Earth with the specified coordinates.
-    :param coordinates: A list of two item; latitude and longitude
+
+    :param ip_data: A list of lists from get_ip_data containing data of an ip
     :return: None
     """
     # Construct the URL with the coordinates
@@ -111,10 +123,13 @@ def open_google_earth(coordinates: list) -> None:
     - -0r
     - /data=KAI
     """
-    latitude, longitude = coordinates
-    google_earth_url += f"@{latitude},{longitude}," \
-                        f"89.06331136a,12094.0505788d,1y,1.97597436h,60t,-0r/data=KAI"
 
-    # Open the URL in the default web browser
-    xprint(f"{coordinates} Opening Google Earth...")
-    webbrowser.open(google_earth_url)
+    for data in ip_data:
+        latitude = data[9]
+        longitude = data[10]
+        google_earth_url += f"@{latitude},{longitude}," \
+                            f"89.06331136a,12094.0505788d,1y,1.97597436h,60t,-0r/data=KAI"
+
+        # Open the URL in the default web browser
+        xprint(f"({latitude}, {longitude}) Opening Google Earth...")
+        webbrowser.open(google_earth_url)
