@@ -1,5 +1,4 @@
 import os
-import requests
 import subprocess
 import urllib.request
 from rich import print as xprint
