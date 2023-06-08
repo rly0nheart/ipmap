@@ -21,14 +21,14 @@
 [Türkçe readme](https://github.com/rly0nheart/ipmap/blob/master/README_tr.md) • 
 [Polskie readme](https://github.com/rly0nheart/ipmap/blob/master/README_pl.md)
 
-IPMap geolocaliza una dirección IP dada/direcciones de un archivo, luego genera un [folleto] (https://github.com/leaflet/leaflet) mapa que señala la ubicación de cada dirección IP en él (con el argumento correcto).
+IPMap geolocaliza una dirección IP dada/direcciones de un archivo, luego genera un [folleto mapa](https://github.com/leaflet/leaflet) que señala la ubicación de cada dirección IP en él (con el argumento correcto).
 
 # Características
-- [x] Busca direcciones IP y devuelve la información asociada.
-- [x] Busca una(s) dirección(es) IP y devuelve la información asociada, luego señala la ubicación de la(s) dirección(es) IP en un mapa de folleto generado.
-- [x] Abre Google Earth en las coordenadas especificadas (formato: latitud longitud).
-- [x] Los mapas generados se guardan en el directorio `maps` que se crea en tiempo de ejecución si no existe.
-- [x] No utiliza dependencias externas para el mapa, sino que utiliza un html ya escrito. [Plantilla de mapa] (ipmap/data/templates/map.html).
+* Busca direcciones IP y devuelve la información asociada.
+* Busca una (s) dirección (es) IP y devuelve la información asociada, luego señala la ubicación de la (s) dirección (es) IP en un mapa de folleto generado.
+* Abre Google Earth en la ubicación de las direcciones IP especificadas.
+* Los mapas generados se guardan en el directorio `maps` en el directorio de inicio del usuario que se crea en tiempo de ejecución si no existe.
+* No utiliza dependencias externas para el mapa, sino que utiliza una [plantilla de mapa] html ya escrita (ipmap/data/templates/map.html).
 
 # Instalación
 ## PyPI
@@ -42,7 +42,7 @@ O si prefiere instalarlo desde la fuente, puede ejecutar el siguiente comando
 pip install git+https://github.com/rly0nheart/ipmap.git
 ```
 ## Construir desde la fuente
-```Python
+```Pitón
 # instalar poesía
 pip install poetry
 
@@ -72,20 +72,20 @@ La salida debe verse como la siguiente
 uso:
      Geolocalizar direcciones IP (con un mapa interactivo)
      --------------------------------------------------
-     ipmap map --ip <ip/file_containing_ip_addresses>
+     ipmap map --ip <ip>
 
      Abre Google Earth en las coordenadas dadas
      --------------------------------------------
-     ipmap earth --coordenadas <latitud> <longitud>
+     ipmap earth --ip <ip>
 
      Búsqueda de direcciones IP (igual que el mapa pero sin un mapa interactivo)
      -------------------------------------------------- ----------------
-     ipmap lookup --ip <ip/file_containing_ip_addresses>
+     ipmap lookup --ip <ip>
 
 modos:
-     mapa: crea un mapa interactivo y señala las ubicaciones de las direcciones IP especificadas en él.
-     tierra - abre Google Earth en las coordenadas especificadas
-     búsqueda: busca la información de la(s) dirección(es) IP especificada(s).
+     map - crea un mapa interactivo y señala las ubicaciones de las direcciones IP especificadas en él.
+     earth - abre Google Earth en la ubicación de la dirección IP dada.
+     lookup - busca la información de la(s) dirección(es) IP especificada(s).
     
 
 IPMap (Asignador de IP) — por Richard Mwewa (https://about.me/rly0nheart)
@@ -95,12 +95,14 @@ argumentos posicionales:
 
 opciones:
    -h, --help muestra este mensaje de ayuda y sale
-   -i IP, --ip IP una dirección IP o un archivo que contiene direcciones IP
+   -i IP, --ip IP ip
    -o SALIDA, --output SALIDA
-                         nombre de salida del mapa
-   -c COORDENADAS COORDENADAS, --coordinates COORDENADAS COORDENADAS
-                         espacio separado latitud y longitud
+                         nombre de salida del mapa (ipmap predeterminado)
    -v, --version muestra el número de versión del programa y sale
 
 Una herramienta de mapeo y geolocalización IP multiplataforma fácil de usar.
 ```
+> También puede pasar un archivo que contenga direcciones IP a `--ip`, IPMap procesará el archivo en consecuencia y leerá cada IP línea por línea.
+# Traducciones
+* [Justin Clark](https://github.com/jclark1913) - Se agregó [README_ar.md](https://github.com/rly0nheart/ipmap/blob/master/README_ar,md) para la traducción al árabe
+> Si desea traducir el LÉAME del proyecto a cualquier idioma, o si puede mejorar las traducciones (traducidas por Google) de los LÉAME ya existentes, no dude en abrir una solicitud de extracción con sus traducciones. Estaría más que feliz de incluirlos en el proyecto :).
