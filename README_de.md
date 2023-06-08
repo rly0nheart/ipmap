@@ -102,7 +102,7 @@ Optionen:
 
 Ein plattformübergreifendes, benutzerfreundliches IP-Geolocation- und Mapping-Tool.
 ```
-> Sie können auch eine Datei mit IP-Adressen an „--ip“ übergeben. IPMap verarbeitet die Datei entsprechend und liest jede IP Zeile für Zeile.
+> Sie können auch eine Datei mit IP-Adressen an `--ip` übergeben. IPMap verarbeitet die Datei entsprechend und liest jede IP Zeile für Zeile.
 # Übersetzungen
 * [Justin Clark](https://github.com/jclark1913) – [README_ar.md](https://github.com/rly0nheart/ipmap/blob/master/README_ar.md) für die arabische Übersetzung hinzugefügt
 > Wenn Sie die README-Datei des Projekts in eine beliebige Sprache übersetzen möchten oder die (von Google übersetzten) Übersetzungen der bereits vorhandenen README-Dateien verbessern können, können Sie gerne eine Pull-Anfrage mit Ihren Übersetzungen öffnen. Ich würde sie gerne in das Projekt einbeziehen :).
