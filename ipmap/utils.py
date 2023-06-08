@@ -1,9 +1,10 @@
 import os
 import requests
 import subprocess
+import urllib.request
 from rich import print as xprint
-from ipmap.config import Version
 from rich.markdown import Markdown
+from ipmap.config import json, Version
 
 
 def send_request(endpoint) -> dict:
@@ -13,8 +14,8 @@ def send_request(endpoint) -> dict:
     :param endpoint: url endpoint to send request to
     :return: Dictionary response (JSON)
     """
-    with requests.get(endpoint) as response:
-        response_data = response.json()
+    with urllib.request.urlopen(endpoint) as response:
+        response_data = json.loads(response.read().decode())
     return response_data
 
 
