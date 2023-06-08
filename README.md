@@ -104,5 +104,5 @@ A cross-platform easy-to-use ip geolocation & mapping tool.
 ```
 > You can also pass a file containing ip addresses to `--ip`, IPMap will process the file accordingly and read each ip line by line.
 # Translations
-* [Justin Clark](https://github.com/jclark1913) - Added [README_ar.md](https://github.com/rly0nheart/ipmap/blob/master/README_ar,md) for Arabic translation
+* [Justin Clark](https://github.com/jclark1913) - Added [README_ar.md](https://github.com/rly0nheart/ipmap/blob/master/README_ar.md) for Arabic translation
 > If you'd like to translate the project's README in any language, or if you can improve the (Google translated) translations of the already existing README's, feel free to open a pull request with your translations. I'd be more than happy to include them in the project :).
