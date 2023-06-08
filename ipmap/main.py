@@ -16,17 +16,15 @@ def run():
     check_updates()
     try:
         if args.mode == "earth":
-            open_google_earth(args.coordinates)
+            open_google_earth(get_ip_data(args.ip))
         elif args.mode == "lookup":
             get_ip_data(args.ip)
         elif args.mode == "map":
-            generated_map = create_map(get_ip_data(args.ip), os.path.join("maps", format_map_name(args.output)))
+            generated_map = create_map(get_ip_data(args.ip), format_map_name(args.output))
             xprint(f"Opening map: {generated_map}")
             webbrowser.open(generated_map)
     except KeyboardInterrupt:
         xprint(f"\nUser interruption detected ({colour.YELLOW}Ctrl+C{colour.RESET}).")
-    except FileNotFoundError as file_not_found_error:
-        xprint(f"File Not Found: {colour.YELLOW}{file_not_found_error}{colour.RESET}")
     except Exception as error:
-        xprint(f"Error: {colour.RESET}{error}{colour.RESET}")
+        xprint(f"Error: {colour.RED}{error}{colour.RESET}")
 
