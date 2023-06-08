@@ -22,53 +22,60 @@
 [Türkçe readme](https://github.com/rly0nheart/ipmap/blob/master/README_tr.md) •
 [Polskie readme](https://github.com/rly0nheart/ipmap/blob/master/README_pl.md)
 
-IPMap geolocates a given ip address/addresses from a file, then generates a [leaflet](https://github.com/leaflet/leaflet) map pin-pointing the location of each ip address on it (with the right argument).
+<div dir="rtl">
+يحدد تطبيق (IPMap) الموقع الجغرافي لعنوان IP أو عدد من عناوين IP من ملف ثم ينشئ خريطة من نوع [leaflet] (https://github.com/leaflet/leaflet) تشير إلى الموقع الجغرافي لكل عنوان IP موجود في ذات الملف.
 
-# Features
-* Looks up ip address(es) and returns the associated information.
-* Looks up an ip address(es) and returns the associated information then pin points the location of the ip address(es) on a generated leaflet map.
-* Opens Google Earth on the location of the specified ip address(es).
-* Generated maps are saved to the `maps` directory in the user's home directory which is created on runtime if it does not exist.
-* Does not use external dependencies for the map, instead uses an already written html [map template](ipmap/data/templates/map.html).
+# الميّزات
+* البحث عن عنوان/عناوين IP وإرجاع المعلومات المتعلقة بها.
+* تحديد المواقع الجغرافية لعنوان/عناوين IP والإشارة إليها في خريطة من نوع leaflet يتم إنشاؤها بواسطة التطبيق.
+* عرض إحداثيات المواقع الجغرافية لعنوان/عناوين IP في برنامج Google Earth.
+* حفظ الخرائط التي تم إنشاؤها في دليل ملفات اسمه `maps` والذي يتم إنشاؤه عند تشغيل التطبيق إن لم يكن موجود مسبقاً.
+* عدم وجود أيّ تبعيات خارجية: يستخدم التطبيق ملف html تم إعداده مسبقاً لإنشاء الخرائط. ![map template](ipmap/data/templates/map.html).
 
-# Installation
+
+# تعليمات التثبيت
+
 ## PyPI
-IPMap can be installed from PyPI by running the following command in terminal/command prompt
+يمكن تثبيت IPMap من خلال PyPI عن طريق استخدام الأمر التالي في المحطة الطرفية/سطر الأوامر:
 ```
-pip install ipmap
+pip install  ipmap
 ```
 ## GitHub
-Or if you prefer to install it from source, you can run the following command
+يمكن تثبيت IPMap عن طريق المستودع المصدري على  Github باستخدام الأمر التالي:
 ```
 pip install git+https://github.com/rly0nheart/ipmap.git
 ```
-## Build from source
-```Python
-# install poetry
+
+## التثبيت من المستودع المصدري
+```python
+# ثبّت poetry
 pip install poetry
 
-# clone the project
+# استنسخ المستودع
 git clone https://github.com/rly0nheart/ipmap
 
-# move to the ipmap directory
+# التوجه الى دليل الملفات ipmap
 cd ipmap
 
-# build the wheel file
+# اعمل ملف "wheel"
 poetry build
 
-# install the built wheel (Linux)
+# ثبّت ملف الـ"wheel" (لينوكس)
 pip install dist/*.whl
 
-# install built wheel (Windows)
+# ثبّت ملف الـ"wheel" (ويندوز)
 pip install .\dist\generated-wheel-file-name.whl
+
 ```
 
-# Usage
-To see the usage, you can simply run
+# الاستخدام
+لكشف دليل الاستخدام، استخدم الامر التالي:
+
 ```
 ipmap --help
 ```
-The output should look like the following
+من المفترض أن تظهر التنيجة التالية:
+
 ```
 usage:
     Geolocate IP Address(es) (with an interactive map)
@@ -103,7 +110,8 @@ options:
 
 A cross-platform easy-to-use ip geolocation & mapping tool.
 ```
-> You can also pass a file containing ip addresses to `--ip`, IPMap will process the file accordingly and read each ip line by line.
-# Translations
-* [Justin Clark](https://github.com/jclark1913) - Added [README_ar.md](https://github.com/rly0nheart/ipmap/blob/master/README_ar.md) for Arabic translation
-> If you'd like to translate the project's README in any language, or if you can improve the (Google translated) translations of the already existing README's, feel free to open a pull request with your translations. I'd be more than happy to include them in the project :).
+> يمكنك أيضا إيضاع ملف يحتوي على عناوين IP في المحطة الطرفية باستخدام `--ip`. في هذه حالة، سيقرأ IPMap كل عنوان في ذات الملف سطراً بسطر.
+# الترجمة
+* [Justin Clark](https://github.com/jclark1913) - اضافة ترجمة باللغة العربية [README_ar.md](https://github.com/rly0nheart/ipmap/blob/master/README_ar.md)
+> في حال رغبت في ترجمة ملف الـREADME لهاد المشروع إلى اي لغة أو أردت تحسين الملفات التي تم ترجمتها عبر Google Translate فبإمكانك فتح طلب سحب مع ترجمتك وسأكون سعيداً جداً لإضافتها إلى المشروع :)
+</div>
