@@ -27,8 +27,6 @@ classifiers = [
 [tool.poetry.dependencies]
 python = "^3.9"
 rich = "*"
-requests = "*"
-
 
 [tool.poetry.scripts]
 ipmap = "ipmap.main:run"
