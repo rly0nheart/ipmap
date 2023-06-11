@@ -16,7 +16,7 @@ class Version:
         """
         Returns the full version string composed of the version components.
 
-        :return: The complete version string in the format "major.minor.patch.suffix".
+        :return: The complete version string in the format "major.minor.patchsuffix".
         """
         return f"{self.major}.{self.minor}.{self.patch}{self.suffix}"
 
