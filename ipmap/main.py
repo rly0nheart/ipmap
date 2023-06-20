@@ -15,16 +15,14 @@ def run():
     path_finder(["maps"])
     check_updates()
     try:
-        if args.mode == "earth":
-            open_google_earth(get_ip_data(args.ip))
-        elif args.mode == "lookup":
-            get_ip_data(args.ip)
-        elif args.mode == "map":
-            generated_map = create_map(get_ip_data(args.ip), format_map_name(args.output))
-            xprint(f"Opening map: {generated_map}")
-            webbrowser.open(generated_map)
+        if args:
+            if args.earth:
+                open_google_earth(get_ip_data(args.ip))
+            if args.lookup:
+                get_ip_data(args.ip)
+            if args.map:
+                generated_map = create_map(get_ip_data(args.ip), format_map_name(args.output))
+                xprint(f"Opening map: {generated_map}")
+                webbrowser.open(generated_map)
     except KeyboardInterrupt:
-        xprint(f"\nUser interruption detected ({colour.YELLOW}Ctrl+C{colour.RESET}).")
-    except Exception as error:
-        xprint(f"Error: {colour.RED}{error}{colour.RESET}")
-
+        xprint(f"\nUser interruption detected (Ctrl+C).")

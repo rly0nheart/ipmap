@@ -1,9 +1,10 @@
 import os
 import subprocess
-import urllib.request
 from rich import print as xprint
+from urllib.request import urlopen
 from rich.markdown import Markdown
 from ipmap.config import json, Version
+from urllib.error import HTTPError, URLError
 
 
 def send_request(endpoint) -> dict:
@@ -13,9 +14,12 @@ def send_request(endpoint) -> dict:
     :param endpoint: url endpoint to send request to
     :return: Dictionary response (JSON)
     """
-    with urllib.request.urlopen(endpoint) as response:
-        response_data = json.loads(response.read().decode())
-    return response_data
+    try:
+        with urlopen(endpoint) as response:
+            response_data = json.loads(response.read().decode())
+        return response_data
+    except (URLError, HTTPError) as error:
+        xprint(f"Error: {error}")
 
 
 # Check program updates
@@ -61,6 +65,6 @@ def clear_screen() -> None:
     Clear the terminal screen/
     If Operating system is Windows, uses the 'cls' command. Otherwise, uses the 'clear' command
 
-    :return: None
+    :return: Uhh a cleared screen? haha
     """
     subprocess.call("cmd.exe /c cls" if os.name == "nt" else "clear")

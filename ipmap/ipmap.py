@@ -2,9 +2,7 @@ import os
 import webbrowser
 from rich import print as xprint
 from ipmap.utils import send_request
-from ipmap.config import Colours, create_ip_table
-
-colour = Colours()
+from ipmap.config import create_ip_table
 
 
 def get_ip_data(ip_address: str) -> list:

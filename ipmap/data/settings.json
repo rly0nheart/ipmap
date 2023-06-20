@@ -5,8 +5,8 @@
     "about": "A cross-platform easy-to-use ip geolocation & mapping tool.",
     "version":
     {
-      "major": "1",
-      "minor": "1",
+      "major": "2",
+      "minor": "0",
       "patch": "0",
       "suffix": ""
     },
@@ -19,17 +19,5 @@
       "twitter": "https://twitter.com/rly0nheart",
       "github": "https://github.com/rly0nheart"
     }
-  },
-  "colours":
-  {
-    "BLACK": "[white]",
-    "CYAN": "[cyan]",
-    "BLUE": "[blue]",
-    "GREEN": "[green]",
-    "RED": "[red]",
-    "RESET": "[/]",
-    "WHITE": "[white]",
-    "YELLOW": "[yellow]",
-    "PURPLE": "[purple]"
   }
 }
