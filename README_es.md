@@ -70,40 +70,38 @@ ipmap --help
 ```
 La salida debe verse como la siguiente
 ```
-uso:
-     Geolocalizar direcciones IP (con un mapa interactivo)
-     --------------------------------------------------
-     ipmap map --ip <ip>
+usage: 
+    Geolocate IP Address(es) (with an interactive map)
+    --------------------------------------------------
+    ipmap <ip> --map
 
-     Abre Google Earth en las coordenadas dadas
-     --------------------------------------------
-     ipmap earth --ip <ip>
+    Open Google Earth on the given coordinates
+    --------------------------------------------
+    ipmap <ip> --earth
 
-     Búsqueda de direcciones IP (igual que el mapa pero sin un mapa interactivo)
-     -------------------------------------------------- ----------------
-     ipmap lookup --ip <ip>
-
-modos:
-     map - crea un mapa interactivo y señala las ubicaciones de las direcciones IP especificadas en él.
-     earth - abre Google Earth en la ubicación de la dirección IP dada.
-     lookup - busca la información de la(s) dirección(es) IP especificada(s).
+    Lookup IP Address(es) (same as map but without an interactive map)
+    ------------------------------------------------------------------
+    ipmap <ip> --lookup
     
 
-IPMap (Asignador de IP) — por Richard Mwewa (https://about.me/rly0nheart)
+IPMap (IP Mapper) — by Richard Mwewa (https://about.me/rly0nheart)
 
-argumentos posicionales:
-   modo de inicio {earth, lookup, map}
+positional arguments:
+  ip                    target ip address
 
-opciones:
-   -h, --help muestra este mensaje de ayuda y sale
-   -i IP, --ip IP ip
-   -o SALIDA, --output SALIDA
-                         nombre de salida del mapa (ipmap predeterminado)
-   -v, --version muestra el número de versión del programa y sale
+options:
+  -h, --help            show this help message and exit
+  -e, --earth           Open Google Earth on the location of a given ip
+  -l, --lookup          Lookup an ip (like --map, but without an interactive
+                        map)
+  -m, --map             Geolocate an ip (with an interactive map)
+  -o OUTPUT, --output OUTPUT
+                        map output name (default ipmap)
+  -v, --version         show program's version number and exit
 
-Una herramienta de mapeo y geolocalización IP multiplataforma fácil de usar.
+A cross-platform easy-to-use ip geolocation & mapping tool.
 ```
-> También puede pasar un archivo que contenga direcciones IP a `--ip`, IPMap procesará el archivo en consecuencia y leerá cada IP línea por línea.
+> También puede pasar un archivo que contenga direcciones IP a `ip`, IPMap procesará el archivo en consecuencia y leerá cada IP línea por línea.
 # Traducciones
 * [Justin Clark](https://github.com/jclark1913) - Se agregó [README_ar.md](https://github.com/rly0nheart/ipmap/blob/master/README_ar,md) para la traducción al árabe
 > Si desea traducir el LÉAME del proyecto a cualquier idioma, o si puede mejorar las traducciones (traducidas por Google) de los LÉAME ya existentes, no dude en abrir una solicitud de extracción con sus traducciones. Estaría más que feliz de incluirlos en el proyecto :).
