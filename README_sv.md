@@ -70,38 +70,36 @@ ipmap --help
 ```
 Utgången ska se ut som följande
 ```
-användande:
-     Geolokalisera IP-adresser (med en interaktiv karta)
-     --------------------------------------------------
-     ipmap map --ip <ip>
+usage: 
+    Geolocate IP Address(es) (with an interactive map)
+    --------------------------------------------------
+    ipmap <ip> --map
 
-     Öppna Google Earth på de angivna koordinaterna
-     --------------------------------------------
-     ipmap earht --ip <ip>
+    Open Google Earth on the given coordinates
+    --------------------------------------------
+    ipmap <ip> --earth
 
-     Slå upp IP-adresser (samma som kartan men utan en interaktiv karta)
-     -------------------------------------------------- ----------------
-     ipmap lookup --ip <ip>
+    Lookup IP Address(es) (same as map but without an interactive map)
+    ------------------------------------------------------------------
+    ipmap <ip> --lookup
+    
 
-lägen:
-     map - skapar en interaktiv karta och stift pekar på platserna för de angivna IP-adresserna på den.
-     earth - öppnar google earth på platsen för den angivna ip-adressen.
-     lookup - slår upp informationen om den/de angivna ip-adresserna.
+IPMap (IP Mapper) — by Richard Mwewa (https://about.me/rly0nheart)
 
+positional arguments:
+  ip                    target ip address
 
-IPMap (IP Mapper) — av Richard Mwewa (https://about.me/rly0nheart)
+options:
+  -h, --help            show this help message and exit
+  -e, --earth           Open Google Earth on the location of a given ip
+  -l, --lookup          Lookup an ip (like --map, but without an interactive
+                        map)
+  -m, --map             Geolocate an ip (with an interactive map)
+  -o OUTPUT, --output OUTPUT
+                        map output name (default ipmap)
+  -v, --version         show program's version number and exit
 
-positionsargument:
-   {earth,lookup,map} init-läge
-
-alternativ:
-   -h, --help visa detta hjälpmeddelande och avsluta
-   -i IP, --ip IP ip
-   -o OUTPUT, --output OUTPUT
-                         map output namn (standard ipmap)
-   -v, --version visar programmets versionsnummer och avsluta
-
-Ett plattformsoberoende lättanvänt verktyg för geolokalisering och kartläggning av IP.
+A cross-platform easy-to-use ip geolocation & mapping tool.
 ```
 > Du kan också skicka en fil som innehåller ip-adresser till `--ip`, IPMap kommer att bearbeta filen därefter och läsa varje ip rad för rad.
 # Översättningar
