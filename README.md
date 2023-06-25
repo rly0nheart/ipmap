@@ -4,23 +4,23 @@
 ![PyPI](https://img.shields.io/pypi/v/ipmap?label=Latest%20Release&logo=pypi)
 ![PyPI - Status](https://img.shields.io/pypi/status/ipmap?label=Status&logo=pypi)
 
-[English readme](https://github.com/rly0nheart/ipmap/blob/master/README.md) •
-[简体中文 readme](https://github.com/rly0nheart/ipmap/blob/master/README_zh-CN.md) •
-[正體中文 readme](https://github.com/rly0nheart/ipmap/blob/master/README_zh-TW.md) •
-[Lengua española readme](https://github.com/rly0nheart/ipmap/blob/master/README_es.md) •
-[Deutsche readme](https://github.com/rly0nheart/ipmap/blob/master/README_de.md) •
-[Svenska readme](https://github.com/rly0nheart/ipmap/blob/master/README_sv.md) •
-[한국어 readme](https://github.com/rly0nheart/ipmap/blob/master/README_kr.md) •
-[Français readme](https://github.com/rly0nheart/ipmap/blob/master/README_fr.md) •
-[हिन्दी readme](https://github.com/rly0nheart/ipmap/blob/master/README_hi.md) •
-[Português readme](https://github.com/rly0nheart/ipmap/blob/master/README_pt.md) •
-[Italian readme](https://github.com/rly0nheart/ipmap/blob/master/README_it.md) •
-[Русский readme](https://github.com/rly0nheart/ipmap/blob/master/README_ru.md) •
-[Indonesian readme](https://github.com/rly0nheart/ipmap/blob/master/README_id.md) •
-[فارسی readme](https://github.com/rly0nheart/ipmap/blob/master/README_fa.md) •
-[عربي readme](https://github.com/rly0nheart/ipmap/blob/master/README_ar.md) •
-[Türkçe readme](https://github.com/rly0nheart/ipmap/blob/master/README_tr.md) •
-[Polskie readme](https://github.com/rly0nheart/ipmap/blob/master/README_pl.md)
+[English](https://github.com/rly0nheart/ipmap/blob/master/README.md) •
+[简体中文](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=zh-CN&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[正體中文](https://github.com/rly0nheart/ipmap/blob/master/README_zh-TW.md) •
+[Lengua española](https://github.com/rly0nheart/ipmap/blob/master/README_es.md) •
+[Deutsche](https://github.com/rly0nheart/ipmap/blob/master/README_de.md) •
+[Svenska](https://github.com/rly0nheart/ipmap/blob/master/README_sv.md) •
+[한국어](https://github.com/rly0nheart/ipmap/blob/master/README_kr.md) •
+[Français](https://github.com/rly0nheart/ipmap/blob/master/README_fr.md) •
+[हिन्दी](https://github.com/rly0nheart/ipmap/blob/master/README_hi.md) •
+[Português](https://github.com/rly0nheart/ipmap/blob/master/README_pt.md) •
+[Italian](https://github.com/rly0nheart/ipmap/blob/master/README_it.md) •
+[Русский](https://github.com/rly0nheart/ipmap/blob/master/README_ru.md) •
+[Indonesian](https://github.com/rly0nheart/ipmap/blob/master/README_id.md) •
+[فارسی](https://github.com/rly0nheart/ipmap/blob/master/README_fa.md) •
+[عربي](https://github.com/rly0nheart/ipmap/blob/master/README_ar.md) •
+[Türkçe](https://github.com/rly0nheart/ipmap/blob/master/README_tr.md) •
+[Polskie](https://github.com/rly0nheart/ipmap/blob/master/README_pl.md)
 
 IPMap geolocates a given ip address/addresses from a file, then generates a [leaflet](https://github.com/leaflet/leaflet) map pin-pointing the location of each ip address on it (with the right argument).
 
