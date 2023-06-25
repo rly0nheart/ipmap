@@ -101,7 +101,7 @@ options:
 
 A cross-platform easy-to-use ip geolocation & mapping tool.
 ```
-> Du kan också skicka en fil som innehåller ip-adresser till `--ip`, IPMap kommer att bearbeta filen därefter och läsa varje ip rad för rad.
+> Du kan också skicka en fil som innehåller ip-adresser till `ip`, IPMap kommer att bearbeta filen därefter och läsa varje ip rad för rad.
 # Översättningar
 * [Justin Clark](https://github.com/jclark1913) - Lade till [README_ar.md](https://github.com/rly0nheart/ipmap/blob/master/README_ar,md) för arabisk översättning
 > Om du vill översätta projektets README till något språk, eller om du kan förbättra (Google-översatta) översättningarna av de redan befintliga README:erna, öppna gärna en pull-förfrågan med dina översättningar. Jag tar mer än gärna med dem i projektet :).
