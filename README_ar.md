@@ -77,40 +77,38 @@ ipmap --help
 من المفترض أن تظهر التنيجة التالية:
 
 ```
-usage:
+usage: 
     Geolocate IP Address(es) (with an interactive map)
     --------------------------------------------------
-    ipmap map --ip <ip>
+    ipmap <ip> --map
 
     Open Google Earth on the given coordinates
     --------------------------------------------
-    ipmap earth --ip <ip>
+    ipmap <ip> --earth
 
     Lookup IP Address(es) (same as map but without an interactive map)
     ------------------------------------------------------------------
-    ipmap lookup --ip <ip>
-
-modes:
-    map - creates an interactive map and pin points the locations of the specified ip address(es) on it.
-    earth - opens google earth on the location of the given ip address.
-    lookup - looks up the specified ip address(es)' information.
-
+    ipmap <ip> --lookup
+    
 
 IPMap (IP Mapper) — by Richard Mwewa (https://about.me/rly0nheart)
 
 positional arguments:
-  {earth,lookup,map}    init mode
+  ip                    target ip address
 
 options:
   -h, --help            show this help message and exit
-  -i IP, --ip IP        ip
+  -e, --earth           Open Google Earth on the location of a given ip
+  -l, --lookup          Lookup an ip (like --map, but without an interactive
+                        map)
+  -m, --map             Geolocate an ip (with an interactive map)
   -o OUTPUT, --output OUTPUT
                         map output name (default ipmap)
   -v, --version         show program's version number and exit
 
 A cross-platform easy-to-use ip geolocation & mapping tool.
 ```
-> يمكنك أيضا إيضاع ملف يحتوي على عناوين IP في المحطة الطرفية باستخدام `--ip`. في هذه حالة، سيقرأ IPMap كل عنوان في ذات الملف سطراً بسطر.
+> يمكنك أيضا إيضاع ملف يحتوي على عناوين IP في المحطة الطرفية باستخدام `ip`. في هذه حالة، سيقرأ IPMap كل عنوان في ذات الملف سطراً بسطر.
 # الترجمة
 * [Justin Clark](https://github.com/jclark1913) - اضافة ترجمة باللغة العربية [README_ar.md](https://github.com/rly0nheart/ipmap/blob/master/README_ar.md)
 > في حال رغبت في ترجمة ملف الـREADME لهاد المشروع إلى اي لغة أو أردت تحسين الملفات التي تم ترجمتها عبر Google Translate فبإمكانك فتح طلب سحب مع ترجمتك وسأكون سعيداً جداً لإضافتها إلى المشروع :)

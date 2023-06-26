@@ -16,28 +16,9 @@ class Version:
         """
         Returns the full version string composed of the version components.
 
-        :return: The complete version string in the format "major.minor.patch.suffix".
+        :return: The complete version string in the format "major.minor.patchsuffix".
         """
         return f"{self.major}.{self.minor}.{self.patch}{self.suffix}"
-
-
-class Colours:
-    def __init__(self):
-        self.RED = self.get_colour("RED")
-        self.WHITE = self.get_colour("WHITE")
-        self.GREEN = self.get_colour("GREEN")
-        self.YELLOW = self.get_colour("YELLOW")
-        self.RESET = self.get_colour("RESET")
-
-    @staticmethod
-    def get_colour(colour_name: str) -> str:
-        """
-        Retrieves the value of the specified colour from the settings.
-
-        :param: colour_name (str): The name of the colour to retrieve.
-        :return: The value of the specified colour.
-        """
-        return settings()["colours"][colour_name]
 
 
 def settings() -> dict:
@@ -111,21 +92,15 @@ def usage():
     return """
     Geolocate IP Address(es) (with an interactive map)
     --------------------------------------------------
-    ipmap map --ip <ip>
+    ipmap <ip> --map
 
     Open Google Earth on the given coordinates
     --------------------------------------------
-    ipmap earth --ip <ip>
+    ipmap <ip> --earth
 
     Lookup IP Address(es) (same as map but without an interactive map)
     ------------------------------------------------------------------
-    ipmap lookup --ip <ip>
-
-
-modes:
-    map - creates an interactive map and pin points the locations of the specified ip address(es) on it.
-    earth - opens google earth on the location of the given ip address.
-    lookup - looks up the specified ip address(es)' information.
+    ipmap <ip> --lookup
     """
 
 
@@ -134,8 +109,11 @@ def create_parser():
                                                  f" — by {settings()['program']['developer']['name']}" 
                                                  f" ({settings()['program']['developer']['about']})",
                                      epilog=settings()['program']['about'], usage=usage())
-    parser.add_argument("mode", help="init mode", choices=["earth", "lookup", "map"])
-    parser.add_argument("-i", "--ip", help="ip")
+    parser.add_argument("ip", help="target ip address")
+    parser.add_argument("-e", "--earth", help="Open Google Earth on the location of a given ip", action="store_true")
+    parser.add_argument("-l", "--lookup", help="Lookup an ip (like --map, but without an interactive map)",
+                        action="store_true")
+    parser.add_argument("-m", "--map", help="Geolocate an ip (with an interactive map)", action="store_true")
     parser.add_argument("-o", "--output", help="map output name (default %(default)s)", default="ipmap")
     parser.add_argument("-v", "--version", action="version", version=Version().full_version())
     return parser

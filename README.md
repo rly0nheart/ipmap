@@ -4,23 +4,23 @@
 ![PyPI](https://img.shields.io/pypi/v/ipmap?label=Latest%20Release&logo=pypi)
 ![PyPI - Status](https://img.shields.io/pypi/status/ipmap?label=Status&logo=pypi)
 
-[English readme](https://github.com/rly0nheart/ipmap/blob/master/README.md) •
-[简体中文 readme](https://github.com/rly0nheart/ipmap/blob/master/README_zh-CN.md) •
-[正體中文 readme](https://github.com/rly0nheart/ipmap/blob/master/README_zh-TW.md) •
-[Lengua española readme](https://github.com/rly0nheart/ipmap/blob/master/README_es.md) •
-[Deutsche readme](https://github.com/rly0nheart/ipmap/blob/master/README_de.md) •
-[Svenska readme](https://github.com/rly0nheart/ipmap/blob/master/README_sv.md) •
-[한국어 readme](https://github.com/rly0nheart/ipmap/blob/master/README_kr.md) •
-[Français readme](https://github.com/rly0nheart/ipmap/blob/master/README_fr.md) •
-[हिन्दी readme](https://github.com/rly0nheart/ipmap/blob/master/README_hi.md) •
-[Português readme](https://github.com/rly0nheart/ipmap/blob/master/README_pt.md) •
-[Italian readme](https://github.com/rly0nheart/ipmap/blob/master/README_it.md) •
-[Русский readme](https://github.com/rly0nheart/ipmap/blob/master/README_ru.md) •
-[Indonesian readme](https://github.com/rly0nheart/ipmap/blob/master/README_id.md) •
-[فارسی readme](https://github.com/rly0nheart/ipmap/blob/master/README_fa.md) •
-[عربي readme](https://github.com/rly0nheart/ipmap/blob/master/README_ar.md) •
-[Türkçe readme](https://github.com/rly0nheart/ipmap/blob/master/README_tr.md) •
-[Polskie readme](https://github.com/rly0nheart/ipmap/blob/master/README_pl.md)
+[English](https://github.com/rly0nheart/ipmap/blob/master/README.md) •
+[简体中文](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=zh-CN&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[正體中文](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=zh-TW&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[Lengua española](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[Deutsche](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=de&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[Svenska](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=sv&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[한국어](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=ko&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[Français](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[हिन्दी](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=hi&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[Português](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=pt&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[Italian](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=it&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[Русский](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=ru&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[Indonesian](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=id&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[فارسی](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=fa&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[عربي](https://github.com/rly0nheart/ipmap/blob/master/README_ar.md) •
+[Türkçe](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=tr&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[Polskie](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=pl&_x_tr_hl=en-US&_x_tr_pto=wapp)
 
 IPMap geolocates a given ip address/addresses from a file, then generates a [leaflet](https://github.com/leaflet/leaflet) map pin-pointing the location of each ip address on it (with the right argument).
 
@@ -70,33 +70,31 @@ ipmap --help
 ```
 The output should look like the following
 ```
-usage:
+usage: 
     Geolocate IP Address(es) (with an interactive map)
     --------------------------------------------------
-    ipmap map --ip <ip>
+    ipmap <ip> --map
 
     Open Google Earth on the given coordinates
     --------------------------------------------
-    ipmap earth --ip <ip>
+    ipmap <ip> --earth
 
     Lookup IP Address(es) (same as map but without an interactive map)
     ------------------------------------------------------------------
-    ipmap lookup --ip <ip>
-
-modes:
-    map - creates an interactive map and pin points the locations of the specified ip address(es) on it.
-    earth - opens google earth on the location of the given ip address.
-    lookup - looks up the specified ip address(es)' information.
-
+    ipmap <ip> --lookup
+    
 
 IPMap (IP Mapper) — by Richard Mwewa (https://about.me/rly0nheart)
 
 positional arguments:
-  {earth,lookup,map}    init mode
+  ip                    target ip address
 
 options:
   -h, --help            show this help message and exit
-  -i IP, --ip IP        ip
+  -e, --earth           Open Google Earth on the location of a given ip
+  -l, --lookup          Lookup an ip (like --map, but without an interactive
+                        map)
+  -m, --map             Geolocate an ip (with an interactive map)
   -o OUTPUT, --output OUTPUT
                         map output name (default ipmap)
   -v, --version         show program's version number and exit
