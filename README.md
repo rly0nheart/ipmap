@@ -6,21 +6,21 @@
 
 [English](https://github.com/rly0nheart/ipmap/blob/master/README.md) •
 [简体中文](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=zh-CN&_x_tr_hl=en-US&_x_tr_pto=wapp) •
-[正體中文](https://github.com/rly0nheart/ipmap/blob/master/README_zh-TW.md) •
-[Lengua española](https://github.com/rly0nheart/ipmap/blob/master/README_es.md) •
-[Deutsche](https://github.com/rly0nheart/ipmap/blob/master/README_de.md) •
-[Svenska](https://github.com/rly0nheart/ipmap/blob/master/README_sv.md) •
-[한국어](https://github.com/rly0nheart/ipmap/blob/master/README_kr.md) •
-[Français](https://github.com/rly0nheart/ipmap/blob/master/README_fr.md) •
-[हिन्दी](https://github.com/rly0nheart/ipmap/blob/master/README_hi.md) •
-[Português](https://github.com/rly0nheart/ipmap/blob/master/README_pt.md) •
-[Italian](https://github.com/rly0nheart/ipmap/blob/master/README_it.md) •
-[Русский](https://github.com/rly0nheart/ipmap/blob/master/README_ru.md) •
-[Indonesian](https://github.com/rly0nheart/ipmap/blob/master/README_id.md) •
-[فارسی](https://github.com/rly0nheart/ipmap/blob/master/README_fa.md) •
+[正體中文](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=zh-TW&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[Lengua española](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[Deutsche](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=de&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[Svenska](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=sv&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[한국어](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=ko&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[Français](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[हिन्दी](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=hi&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[Português](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=pt&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[Italian](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=it&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[Русский](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=ru&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[Indonesian](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=id&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[فارسی](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=fa&_x_tr_hl=en-US&_x_tr_pto=wapp) •
 [عربي](https://github.com/rly0nheart/ipmap/blob/master/README_ar.md) •
-[Türkçe](https://github.com/rly0nheart/ipmap/blob/master/README_tr.md) •
-[Polskie](https://github.com/rly0nheart/ipmap/blob/master/README_pl.md)
+[Türkçe](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=tr&_x_tr_hl=en-US&_x_tr_pto=wapp) •
+[Polskie](https://github-com.translate.goog/rly0nheart/ipmap/blob/master/README.md?_x_tr_sl=auto&_x_tr_tl=pl&_x_tr_hl=en-US&_x_tr_pto=wapp)
 
 IPMap geolocates a given ip address/addresses from a file, then generates a [leaflet](https://github.com/leaflet/leaflet) map pin-pointing the location of each ip address on it (with the right argument).
 
