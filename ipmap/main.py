@@ -25,4 +25,6 @@ def run():
                 xprint(f"Opening map: {generated_map}")
                 webbrowser.open(generated_map)
     except KeyboardInterrupt:
-        xprint(f"\nUser interruption detected (Ctrl+C).")
+        xprint("\nUser interruption detected (Ctrl+C).")
+    except Exception as e:
+        xprint(f"Error: {e}")
