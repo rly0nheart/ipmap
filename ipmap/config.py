@@ -79,9 +79,14 @@ def create_ip_table(title: str, ip_data: list) -> Table:
     ]
 
     table = Table(title=title, header_style="bold white")
-    for header in column_headers:
-        table.add_column(header)
-
+    
+    for header_index, header in enumerate(column_headers):
+        # Add the first column header with the dim style
+        if header_index == 0:
+            table.add_column(header, style="dim")
+        else:
+            table.add_column(header)
+            
     for ip_info in ip_data:
         table.add_row(*ip_info)
 
